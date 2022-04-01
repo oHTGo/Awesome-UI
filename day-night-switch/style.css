@@ -1,0 +1,66 @@
+body {
+  background-color: #c1b7b7;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-night-switch {
+  --height: 75px;
+  --width: 200px;
+
+  position: relative;
+
+  height: var(--height);
+  width: var(--width);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.day-night-switch__checkbox {
+  height: var(--height);
+  width: var(--width);
+
+  cursor: pointer;
+
+  appearance: none;
+
+  background-color: #c0e6f6;
+
+  border: 5px solid #648694;
+  border-radius: 500vw;
+
+  transition: 1.5s;
+}
+.day-night-switch__checkbox:checked {
+  background-color: #232323;
+
+  border: 5px solid #000;
+}
+.day-night-switch__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: var(--height);
+  width: var(--height);
+
+  background: url('./sun.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  transition: 1.5s;
+  transform: rotate(-180deg);
+}
+.day-night-switch__checkbox:checked ~ .day-night-switch__icon {
+  left: calc(var(--width) - var(--height));
+
+  background: url('./moon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  transform: rotate(360deg);
+}
